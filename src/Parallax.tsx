@@ -36,7 +36,7 @@ const Parallax = () => {
     ScrollTrigger.scrollerProxy("[data-scroll-container]", {
       scrollTop(value) {
         return arguments.length
-          ? scrollRef.current?.scrollTo({ y: value, duration: 1 })
+          ? scrollRef.current?.scrollTo({ y: value, duration: 1 } as any)
           : (scrollRef.current as any).scroll.instance.scroll.y;
       },
       getBoundingClientRect() {
