@@ -1,0 +1,128 @@
+/* Parallax.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: visible;
+}
+
+.parallax-container {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  height: 200vh;
+}
+
+.parallax-section {
+  position: absolute;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  z-index: 1; /* 确保在 parallax-content 上方 */
+  overflow: visible;
+}
+.top-section {
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.bottom-section {
+  height: 300vh;
+  top: -36vh;
+  left: 0;
+}
+
+.parallax-section.top-section {
+  background-color: #f0f0f0;
+}
+
+.parallax-section.bottom-section {
+  background-color: #e0e0e0;
+}
+
+.parallax-content {
+  position: absolute;
+
+  width: 100%;
+  height: 120vh; /* 或其他高度 */
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* 允许子元素超出边界 */
+  z-index: 0; /* 确保在 parallax-section 下方 */
+}
+
+.content1 {
+  top: 0;
+  left: 0;
+}
+.content2 {
+  top: 120vh;
+  left: 0;
+  z-index: 1;
+}
+
+.moveBoxes {
+  display: flex;
+  justify-content: space-between; /* 使子元素之间有间隔 */
+  align-items: center;
+  width: 130%;
+  height: 130vh; /* 调整为合理的高度 */
+  overflow: hidden;
+}
+.moveBoxesDown {
+  display: flex;
+  justify-content: space-between; /* 使子元素之间有间隔 */
+  align-items: center;
+  width: 100%;
+  height: 130vh; /* 调整为合理的高度 */
+  overflow: hidden;
+}
+
+.middleBox,
+.sideBox {
+  width: calc((130vw - 90px) / 3);
+  height: 160vh; /* 调整为合理的高度 */
+  margin: 0 10px; /* 每个盒子两侧的间隔 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 垂直间隔 */
+  z-index: 0; /* 确保在 parallax-section 下方 */
+  background-color: rgba(255, 255, 255, 0.1); /* 可选：背景颜色 */
+}
+.oddBox,
+.evenBox {
+  width: calc((100% - 80px) / 4);
+  height: 160vh; /* 调整为合理的高度 */
+  margin: 0 10px; /* 每个盒子两侧的间隔 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 垂直间隔 */
+  z-index: 0; /* 确保在 parallax-section 下方 */
+  background-color: rgba(255, 255, 255, 0.1); /* 可选：背景颜色 */
+}
+.innerBox {
+  width: 100%;
+  height: calc((100% - 80px) / 3); /* 三个内部盒子高度一致，中间有20px间隔 */
+  background-color: #ffffff; /* 可选：背景颜色 */
+  margin: 10px 0; /* 垂直间隔 */
+}
+
+[data-scroll-container] {
+  overflow: hidden; /* 确保容器可以滚动 */
+  position: relative;
+  height: 350vh;
+}
+
+/* [data-scroll] {
+} */
+.parallax-content-container {
+  overflow: hidden;
+  position: relative;
+  height: 150vh; /* 根据内容需要调整 */
+  z-index: 0;
+}
